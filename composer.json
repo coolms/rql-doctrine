@@ -3,7 +3,15 @@
     "description": "Doctrine ORM translator for coolms/rql: walks the RQL AST onto a QueryBuilder, with portable JSON filtering across Postgres, MySQL, MariaDB, SQLite, SQL Server and Oracle",
     "type": "symfony-bundle",
     "license": "MIT",
-    "keywords": ["rql", "doctrine", "orm", "query", "filter", "symfony", "json"],
+    "keywords": [
+        "rql",
+        "doctrine",
+        "orm",
+        "query",
+        "filter",
+        "symfony",
+        "json"
+    ],
     "authors": [
         {
             "name": "Dmitry Popov"
@@ -31,12 +39,6 @@
             "CoolMS\\RqlDoctrine\\Tests\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/coolms/rql.git"
-        }
-    ],
     "scripts": {
         "test": "phpunit"
     },
