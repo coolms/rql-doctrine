@@ -1,0 +1,54 @@
+{
+    "name": "coolms/rql-doctrine",
+    "description": "Doctrine ORM translator for coolms/rql: walks the RQL AST onto a QueryBuilder, with portable JSON filtering across Postgres, MySQL, MariaDB, SQLite, SQL Server and Oracle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "keywords": ["rql", "doctrine", "orm", "query", "filter", "symfony", "json"],
+    "authors": [
+        {
+            "name": "Dmitry Popov"
+        }
+    ],
+    "require": {
+        "php": "^8.5",
+        "coolms/rql": "^1.0",
+        "doctrine/orm": "^3.0",
+        "doctrine/dbal": "^4.0",
+        "symfony/config": "^7.0 || ^8.0",
+        "symfony/dependency-injection": "^7.0 || ^8.0",
+        "symfony/http-kernel": "^7.0 || ^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "CoolMS\\RqlDoctrine\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CoolMS\\RqlDoctrine\\Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/coolms/rql.git"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "symfony": {
+            "id": "coolms/rql-doctrine",
+            "allow-contrib": false
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
