@@ -1,6 +1,7 @@
 # coolms/rql-doctrine
 
 [![CI](https://github.com/coolms/rql-doctrine/actions/workflows/ci.yml/badge.svg)](https://github.com/coolms/rql-doctrine/actions/workflows/ci.yml)
+[![Latest Version](https://img.shields.io/packagist/v/coolms/rql-doctrine)](https://packagist.org/packages/coolms/rql-doctrine)
 [![PHP](https://img.shields.io/badge/php-%E2%89%A5%208.5-777bb4)](https://www.php.net/releases/8.5/en.php)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -26,20 +27,9 @@ $result->totalItems;  // total matching, ignoring pagination
 composer require coolms/rql-doctrine
 ```
 
-Neither package is on Packagist yet, so add both repositories to your **root**
-`composer.json` first. Composer only reads `repositories` from the root package,
-so declaring them here does not save you this step:
-
-```json
-{
-    "repositories": [
-        { "type": "vcs", "url": "https://github.com/coolms/rql.git" },
-        { "type": "vcs", "url": "https://github.com/coolms/rql-doctrine.git" }
-    ]
-}
-```
-
-Requires PHP `^8.5`, `doctrine/orm` `^3.0` and `doctrine/dbal` `^4.0`.
+Requires PHP `^8.5`, `doctrine/orm` `^3.0`, `doctrine/dbal` `^4.0` and Symfony
+`^8.0`. The Symfony floor is 8 rather than 7 because this package requires PHP
+8.5, and Symfony 7 emits PHP 8.4 deprecations under it.
 
 ### Symfony
 
