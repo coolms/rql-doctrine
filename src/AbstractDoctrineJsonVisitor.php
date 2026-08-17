@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine;
+namespace CoolMS\Rql\Doctrine;
 
 use CoolMS\Rql\Exception\RqlInvalidOperatorException;
 use CoolMS\Rql\FilterNode;

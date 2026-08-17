@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Tests\DependencyInjection;
+namespace CoolMS\Rql\Doctrine\Tests\DependencyInjection;
 
-use CoolMS\RqlDoctrine\DependencyInjection\RqlDoctrineExtension;
-use CoolMS\RqlDoctrine\DoctrineRqlVisitor;
-use CoolMS\RqlDoctrine\DQL\JsonbCastFunction;
-use CoolMS\RqlDoctrine\DQL\SqliteJsonExtractFunction;
+use CoolMS\Rql\Doctrine\DependencyInjection\RqlDoctrineExtension;
+use CoolMS\Rql\Doctrine\DoctrineRqlVisitor;
+use CoolMS\Rql\Doctrine\DQL\JsonbCastFunction;
+use CoolMS\Rql\Doctrine\DQL\SqliteJsonExtractFunction;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -19,7 +19,7 @@ final class RqlDoctrineExtensionTest extends TestCase
     public function testItRegistersTheVisitorServices(): void
     {
         $container = new ContainerBuilder();
-        (new RqlDoctrineExtension())->load([], $container);
+        new RqlDoctrineExtension()->load([], $container);
 
         self::assertTrue($container->hasDefinition(DoctrineRqlVisitor::class));
     }
@@ -28,7 +28,7 @@ final class RqlDoctrineExtensionTest extends TestCase
     {
         $container = $this->containerWithDoctrine();
 
-        (new RqlDoctrineExtension())->prepend($container);
+        new RqlDoctrineExtension()->prepend($container);
 
         $orm = $this->ormConfig($container);
         self::assertArrayHasKey('default', $orm['entity_managers']);
@@ -50,7 +50,7 @@ final class RqlDoctrineExtensionTest extends TestCase
         $container = $this->containerWithDoctrine();
         $container->prependExtensionConfig('rql_doctrine', ['entity_managers' => ['central', 'reporting']]);
 
-        (new RqlDoctrineExtension())->prepend($container);
+        new RqlDoctrineExtension()->prepend($container);
 
         $managers = $this->ormConfig($container)['entity_managers'];
         self::assertSame(['central', 'reporting'], array_keys($managers));
@@ -62,7 +62,7 @@ final class RqlDoctrineExtensionTest extends TestCase
         $container = $this->containerWithDoctrine();
         $container->prependExtensionConfig('rql_doctrine', ['register_dql_functions' => false]);
 
-        (new RqlDoctrineExtension())->prepend($container);
+        new RqlDoctrineExtension()->prepend($container);
 
         self::assertSame([], $container->getExtensionConfig('doctrine'));
     }
@@ -75,7 +75,7 @@ final class RqlDoctrineExtensionTest extends TestCase
     {
         $container = new ContainerBuilder();
 
-        (new RqlDoctrineExtension())->prepend($container);
+        new RqlDoctrineExtension()->prepend($container);
 
         self::assertSame([], $container->getExtensionConfig('doctrine'));
     }
@@ -93,7 +93,7 @@ final class RqlDoctrineExtensionTest extends TestCase
                 return '';
             }
 
-            public function getXsdValidationBasePath(): string|false
+            public function getXsdValidationBasePath(): false
             {
                 return false;
             }

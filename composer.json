@@ -31,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "CoolMS\\RqlDoctrine\\": "src/"
+            "CoolMS\\Rql\\Doctrine\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CoolMS\\RqlDoctrine\\Tests\\": "tests/"
+            "CoolMS\\Rql\\Doctrine\\Tests\\": "tests/"
         }
     },
     "scripts": {

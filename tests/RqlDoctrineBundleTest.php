@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Tests;
+namespace CoolMS\Rql\Doctrine\Tests;
 
-use CoolMS\RqlDoctrine\DependencyInjection\Compiler\PredicateContributorPass;
-use CoolMS\RqlDoctrine\DependencyInjection\RqlDoctrineExtension;
-use CoolMS\RqlDoctrine\DoctrineRqlVisitor;
-use CoolMS\RqlDoctrine\FilterPredicateContributorInterface;
-use CoolMS\RqlDoctrine\RqlDoctrineBundle;
+use CoolMS\Rql\Doctrine\DependencyInjection\Compiler\PredicateContributorPass;
+use CoolMS\Rql\Doctrine\DependencyInjection\RqlDoctrineExtension;
+use CoolMS\Rql\Doctrine\DoctrineRqlVisitor;
+use CoolMS\Rql\Doctrine\FilterPredicateContributorInterface;
+use CoolMS\Rql\Doctrine\RqlDoctrineBundle;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
@@ -19,7 +19,7 @@ final class RqlDoctrineBundleTest extends TestCase
 {
     public function testItExposesTheExtensionUnderTheExpectedAlias(): void
     {
-        $extension = (new RqlDoctrineBundle())->getContainerExtension();
+        $extension = new RqlDoctrineBundle()->getContainerExtension();
 
         self::assertInstanceOf(RqlDoctrineExtension::class, $extension);
         // config/packages/rql_doctrine.yaml is keyed on this. A mismatch makes
@@ -30,7 +30,7 @@ final class RqlDoctrineBundleTest extends TestCase
     public function testItAutoconfiguresContributorsWithTheTagThePassReads(): void
     {
         $container = new ContainerBuilder();
-        (new RqlDoctrineBundle())->build($container);
+        new RqlDoctrineBundle()->build($container);
 
         $autoconfigured = $container->getAutoconfiguredInstanceof();
         self::assertArrayHasKey(FilterPredicateContributorInterface::class, $autoconfigured);
@@ -44,7 +44,7 @@ final class RqlDoctrineBundleTest extends TestCase
     public function testItRegistersTheCompilerPass(): void
     {
         $container = new ContainerBuilder();
-        (new RqlDoctrineBundle())->build($container);
+        new RqlDoctrineBundle()->build($container);
 
         $passes = $container->getCompiler()->getPassConfig()->getPasses();
         $found = array_filter($passes, static fn (object $p): bool => $p instanceof PredicateContributorPass);
@@ -69,8 +69,8 @@ final class RqlDoctrineBundleTest extends TestCase
             public function process(ContainerBuilder $container): void
             {
                 // Stand in for the DBAL connection the real application supplies.
-                $container->removeDefinition('CoolMS\RqlDoctrine\DynamicFieldSqlTypeResolver');
-                $container->removeDefinition('CoolMS\RqlDoctrine\AbstractDoctrineJsonVisitor');
+                $container->removeDefinition('CoolMS\Rql\Doctrine\DynamicFieldSqlTypeResolver');
+                $container->removeDefinition('CoolMS\Rql\Doctrine\AbstractDoctrineJsonVisitor');
                 $container->removeDefinition(DoctrineRqlVisitor::class);
             }
         }, PassConfig::TYPE_BEFORE_REMOVING);

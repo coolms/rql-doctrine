@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine;
+namespace CoolMS\Rql\Doctrine;
 
-use CoolMS\RqlDoctrine\Platform\MariaDBDoctrineJsonVisitor;
-use CoolMS\RqlDoctrine\Platform\MySQLDoctrineJsonVisitor;
-use CoolMS\RqlDoctrine\Platform\OracleDoctrineJsonVisitor;
-use CoolMS\RqlDoctrine\Platform\PostgreSQLDoctrineJsonVisitor;
-use CoolMS\RqlDoctrine\Platform\SQLiteDoctrineJsonVisitor;
-use CoolMS\RqlDoctrine\Platform\SQLServerDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\Platform\MariaDBDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\Platform\MySQLDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\Platform\OracleDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\Platform\PostgreSQLDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\Platform\SQLiteDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\Platform\SQLServerDoctrineJsonVisitor;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\MariaDBPlatform;
 use Doctrine\DBAL\Platforms\MySQLPlatform;

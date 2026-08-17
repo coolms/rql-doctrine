@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine;
+namespace CoolMS\Rql\Doctrine;
 
-use CoolMS\RqlDoctrine\DependencyInjection\Compiler\PredicateContributorPass;
-use CoolMS\RqlDoctrine\DependencyInjection\RqlDoctrineExtension;
+use CoolMS\Rql\Doctrine\DependencyInjection\Compiler\PredicateContributorPass;
+use CoolMS\Rql\Doctrine\DependencyInjection\RqlDoctrineExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -31,7 +31,9 @@ final class RqlDoctrineBundle extends Bundle
         $container->addCompilerPass(new PredicateContributorPass());
     }
 
-    public function getContainerExtension(): ?ExtensionInterface
+    // Narrower than the parent's `?ExtensionInterface`: this bundle always has
+    // an extension, and saying so spares every caller a null check.
+    public function getContainerExtension(): ExtensionInterface
     {
         return new RqlDoctrineExtension();
     }
