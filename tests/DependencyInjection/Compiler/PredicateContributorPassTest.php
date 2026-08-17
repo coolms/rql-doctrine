@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Tests\DependencyInjection\Compiler;
+namespace CoolMS\Rql\Doctrine\Tests\DependencyInjection\Compiler;
 
-use CoolMS\RqlDoctrine\DependencyInjection\Compiler\PredicateContributorPass;
-use CoolMS\RqlDoctrine\DoctrineRqlVisitor;
+use CoolMS\Rql\Doctrine\DependencyInjection\Compiler\PredicateContributorPass;
+use CoolMS\Rql\Doctrine\DoctrineRqlVisitor;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
@@ -20,7 +20,7 @@ final class PredicateContributorPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->setDefinition(DoctrineRqlVisitor::class, new Definition(DoctrineRqlVisitor::class));
 
-        (new PredicateContributorPass())->process($container);
+        new PredicateContributorPass()->process($container);
 
         $argument = $container->getDefinition(DoctrineRqlVisitor::class)->getArgument('$predicateContributors');
 
@@ -37,7 +37,7 @@ final class PredicateContributorPassTest extends TestCase
     {
         $container = new ContainerBuilder();
 
-        (new PredicateContributorPass())->process($container);
+        new PredicateContributorPass()->process($container);
 
         self::assertFalse($container->hasDefinition(DoctrineRqlVisitor::class));
     }

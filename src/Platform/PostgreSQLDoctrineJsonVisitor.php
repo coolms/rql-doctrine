@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Platform;
+namespace CoolMS\Rql\Doctrine\Platform;
 
-use CoolMS\RqlDoctrine\AbstractDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\AbstractDoctrineJsonVisitor;
 
 /**
  * PostgreSQL generated column source: CAST((extras->>'key') AS <sqltype>) STORED.

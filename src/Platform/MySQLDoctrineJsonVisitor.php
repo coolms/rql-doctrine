@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Platform;
+namespace CoolMS\Rql\Doctrine\Platform;
 
-use CoolMS\RqlDoctrine\AbstractDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\AbstractDoctrineJsonVisitor;
 
 /**
  * MySQL generated column source: JSON_UNQUOTE(JSON_EXTRACT(extras, '$.key')) VIRTUAL.

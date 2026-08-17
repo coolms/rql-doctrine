@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Tests\DQL;
+namespace CoolMS\Rql\Doctrine\Tests\DQL;
 
 use Doctrine\ORM\Query\AST\Node;
 use Doctrine\ORM\Query\SqlWalker;

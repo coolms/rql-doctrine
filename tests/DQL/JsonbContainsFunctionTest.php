@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Tests\DQL;
+namespace CoolMS\Rql\Doctrine\Tests\DQL;
 
-use CoolMS\RqlDoctrine\DQL\JsonbContainsFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonbContainsFunction;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\MariaDBPlatform;

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\DependencyInjection\Compiler;
+namespace CoolMS\Rql\Doctrine\DependencyInjection\Compiler;
 
-use CoolMS\RqlDoctrine\DoctrineRqlVisitor;
+use CoolMS\Rql\Doctrine\DoctrineRqlVisitor;
 use Symfony\Component\DependencyInjection\Argument\TaggedIteratorArgument;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

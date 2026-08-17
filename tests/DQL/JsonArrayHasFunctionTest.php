@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Tests\DQL;
+namespace CoolMS\Rql\Doctrine\Tests\DQL;
 
-use CoolMS\RqlDoctrine\DQL\JsonArrayHasFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonArrayHasFunction;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\MariaDBPlatform;
