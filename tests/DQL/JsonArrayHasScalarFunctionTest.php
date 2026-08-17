@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\Tests\DQL;
+namespace CoolMS\Rql\Doctrine\Tests\DQL;
 
-use CoolMS\RqlDoctrine\DQL\JsonArrayHasScalarFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonArrayHasScalarFunction;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\MariaDBPlatform;
@@ -28,7 +28,7 @@ use function array_map;
  * `JSON_ARRAY_HAS_SCALAR(haystack, value)` -- membership of a scalar in a JSON
  * array of bare strings, e.g. `["premium","eu"]`.
  *
- * The sibling {@see \CoolMS\RqlDoctrine\DQL\JsonArrayHasFunction} cannot answer
+ * The sibling {@see \CoolMS\Rql\Doctrine\DQL\JsonArrayHasFunction} cannot answer
  * it: it takes a `field`, because it searches arrays of OBJECTS. Without a
  * portable predicate for this shape the fallback is filtering in PHP over a
  * full table read; these cases are what let that move into SQL.

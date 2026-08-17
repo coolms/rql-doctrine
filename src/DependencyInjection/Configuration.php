@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\DependencyInjection;
+namespace CoolMS\Rql\Doctrine\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -19,15 +19,15 @@ final class Configuration implements ConfigurationInterface
                 // application is free to name its managers anything. Defaulting
                 // to 'default' covers the single-manager case; an application
                 // with named managers lists them here.
-                ->arrayNode('entity_managers')
-                    ->info('Entity managers to register the JSON DQL functions on.')
-                    ->scalarPrototype()->end()
-                    ->defaultValue(['default'])
-                ->end()
-                ->booleanNode('register_dql_functions')
-                    ->info('Set false to register the DQL functions yourself.')
-                    ->defaultTrue()
-                ->end()
+            ->arrayNode('entity_managers')
+            ->info('Entity managers to register the JSON DQL functions on.')
+            ->scalarPrototype()->end()
+            ->defaultValue(['default'])
+            ->end()
+            ->booleanNode('register_dql_functions')
+            ->info('Set false to register the DQL functions yourself.')
+            ->defaultTrue()
+            ->end()
             ->end();
 
         return $treeBuilder;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\DQL;
+namespace CoolMS\Rql\Doctrine\DQL;
 
 use Doctrine\DBAL\Platforms\AbstractMySQLPlatform;
 use Doctrine\DBAL\Platforms\PostgreSQLPlatform;

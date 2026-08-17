@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\DQL;
+namespace CoolMS\Rql\Doctrine\DQL;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\AST\Literal;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use CoolMS\RqlDoctrine\AbstractDoctrineJsonVisitor;
-use CoolMS\RqlDoctrine\DoctrineJsonVisitorFactory;
-use CoolMS\RqlDoctrine\DoctrineRqlVisitor;
-use CoolMS\RqlDoctrine\DynamicFieldSqlTypeResolver;
+use CoolMS\Rql\Doctrine\AbstractDoctrineJsonVisitor;
+use CoolMS\Rql\Doctrine\DoctrineJsonVisitorFactory;
+use CoolMS\Rql\Doctrine\DoctrineRqlVisitor;
+use CoolMS\Rql\Doctrine\DynamicFieldSqlTypeResolver;
 use Doctrine\DBAL\Connection;
 
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;

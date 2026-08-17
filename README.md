@@ -37,7 +37,7 @@ Register the bundle:
 
 ```php
 // config/bundles.php
-CoolMS\RqlDoctrine\RqlDoctrineBundle::class => ['all' => true],
+CoolMS\Rql\Doctrine\RqlDoctrineBundle::class => ['all' => true],
 ```
 
 That is enough for a single-manager application. If your entity manager is not

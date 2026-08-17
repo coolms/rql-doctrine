@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace CoolMS\RqlDoctrine\DependencyInjection;
+namespace CoolMS\Rql\Doctrine\DependencyInjection;
 
-use CoolMS\RqlDoctrine\DQL\JsonArrayHasFunction;
-use CoolMS\RqlDoctrine\DQL\JsonArrayHasScalarFunction;
-use CoolMS\RqlDoctrine\DQL\JsonbCastFunction;
-use CoolMS\RqlDoctrine\DQL\JsonbContainsFunction;
-use CoolMS\RqlDoctrine\DQL\JsonbExistsFunction;
-use CoolMS\RqlDoctrine\DQL\JsonbGetTextFunction;
-use CoolMS\RqlDoctrine\DQL\JsonbVColFunction;
-use CoolMS\RqlDoctrine\DQL\JsonValueFunction;
-use CoolMS\RqlDoctrine\DQL\SqliteJsonExtractFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonArrayHasFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonArrayHasScalarFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonbCastFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonbContainsFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonbExistsFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonbGetTextFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonbVColFunction;
+use CoolMS\Rql\Doctrine\DQL\JsonValueFunction;
+use CoolMS\Rql\Doctrine\DQL\SqliteJsonExtractFunction;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
