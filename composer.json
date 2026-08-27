@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^8.5",
-        "coolms/rql": "^2.0",
+        "coolms/rql": "^1.0",
         "doctrine/orm": "^3.0",
         "doctrine/dbal": "^4.0",
         "symfony/config": "^8.0",
